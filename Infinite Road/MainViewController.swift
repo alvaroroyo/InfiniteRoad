@@ -53,7 +53,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate {
         
         //Boton de play
         let playBtn = UIButton.init(frame: CGRect(x: 0, y: mainView.frame.maxY - 130, width: 100, height: 50))
-        playBtn.setBackgroundImage(UIImage.imageWithColor(color: UIColor.colorWithHex(hex: "#ffff00", alpha: 0.6)), for: UIControlState.highlighted)
+        playBtn.setBackgroundImage(UIImage.imageWithColor(color: UIColor.colorWithHex(hex: "#00ff00", alpha: 0.2)), for: UIControlState.normal)
         playBtn.setTitle("Play", for: .normal)
         playBtn.setTitleColor(UIColor.green, for: .normal)
         playBtn.clipsToBounds = true
@@ -64,6 +64,23 @@ class MainViewController: UIViewController,UIScrollViewDelegate {
         playBtn.center = CGPoint(x: mainView.center.x, y: playBtn.center.y)
         playBtn.addTarget(self, action:#selector(playBtnAction(sender:)) , for: .touchUpInside)
         mainView.addSubview(playBtn)
+        
+        let soundBtn = UIButton.init(frame: CGRect(x: 0, y: playBtn.frame.maxY + 10, width: 80, height: 35))
+        soundBtn.setBackgroundImage(UIImage.imageWithColor(color: UIColor.colorWithHex(hex: "#00ff00", alpha: 0.2)), for: UIControlState.selected)
+        soundBtn.setBackgroundImage(UIImage.imageWithColor(color: UIColor.colorWithHex(hex: "#ff0000", alpha: 0.2)), for: UIControlState.normal)
+        soundBtn.setTitle("Sound ON", for: .selected)
+        soundBtn.setTitle("Sound OFF", for: .normal)
+        soundBtn.setTitleColor(UIColor.green, for: .selected)
+        soundBtn.setTitleColor(UIColor.red, for: .normal)
+        soundBtn.clipsToBounds = true
+        soundBtn.layer.cornerRadius = 7
+        soundBtn.layer.borderWidth = 2
+        soundBtn.titleLabel?.font = UIFont(name: "Verdana", size: 12)
+        soundBtn.center = CGPoint(x: mainView.center.x, y: soundBtn.center.y)
+        soundBtn.addTarget(self, action:#selector(soundBtnAction(sender:)) , for: .touchUpInside)
+        soundBtn.isSelected = Controller.shared.sound!
+        soundBtn.layer.borderColor = soundBtn.isSelected ? UIColor.green.cgColor : UIColor.red.cgColor
+        mainView.addSubview(soundBtn)
         
         let numPaginas : CGFloat = 2
         
@@ -86,6 +103,14 @@ class MainViewController: UIViewController,UIScrollViewDelegate {
 
     @objc private func playBtnAction(sender : UIButton){
         self.navigationController?.pushViewController(GameViewController(), animated: true)
+    }
+    
+    @objc private func soundBtnAction(sender:UIButton){
+        sender.isSelected = !sender.isSelected
+        Controller.shared.sound = sender.isSelected
+        
+        sender.layer.borderColor = sender.isSelected ? UIColor.green.cgColor : UIColor.red.cgColor
+        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

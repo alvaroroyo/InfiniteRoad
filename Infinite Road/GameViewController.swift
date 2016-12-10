@@ -112,7 +112,7 @@ class GameViewController : UIViewController{
         soundBtn.layer.cornerRadius = soundBtn.frame.height / 2
         soundBtn.imageEdgeInsets = UIEdgeInsets(top: 7, left: 8, bottom: 7, right: 7)
         soundBtn.addTarget(self, action:#selector(setSound(sender:)) , for: .touchUpInside)
-        soundBtn.isSelected = true
+        soundBtn.isSelected = Controller.shared.sound
         mainView.addSubview(soundBtn)
         
         self.bonusBall = UIImageView(image: UIImage(named: "bonus")!)
@@ -350,7 +350,7 @@ class GameViewController : UIViewController{
     
     func play(soundType: soundType){
         
-        if(Controller.shared.sound){
+        if(Controller.shared.sound!){
             switch soundType {
             case .click:
                 clickSound.play()

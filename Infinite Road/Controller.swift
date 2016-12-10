@@ -12,6 +12,29 @@ class Controller {
     
     static let shared = Controller()
     
-    var sound = true
+    private let UD_SOUND = "SOUND"
+    
+    init(){
+        
+        let ud_dic = UserDefaults().dictionaryRepresentation()
+        
+        if(ud_dic.index(forKey: UD_SOUND) == nil){
+            sound = true
+        }else{
+            sound = UserDefaults().bool(forKey: UD_SOUND)
+        }
+        
+    }
+    
+    var sound : Bool! {
+        didSet{
+            if(oldValue != sound){
+                UserDefaults().set(sound, forKey: UD_SOUND)
+                UserDefaults().synchronize()
+            }
+        }
+    }
+    
+    
     
 }
