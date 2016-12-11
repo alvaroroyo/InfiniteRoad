@@ -78,7 +78,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate {
         soundBtn.titleLabel?.font = UIFont(name: "Verdana", size: 12)
         soundBtn.center = CGPoint(x: mainView.center.x, y: soundBtn.center.y)
         soundBtn.addTarget(self, action:#selector(soundBtnAction(sender:)) , for: .touchUpInside)
-        soundBtn.isSelected = Controller.shared.sound!
+        soundBtn.isSelected = Controller.shared().sound!
         soundBtn.layer.borderColor = soundBtn.isSelected ? UIColor.green.cgColor : UIColor.red.cgColor
         mainView.addSubview(soundBtn)
         
@@ -107,7 +107,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate {
     
     @objc private func soundBtnAction(sender:UIButton){
         sender.isSelected = !sender.isSelected
-        Controller.shared.sound = sender.isSelected
+        Controller.shared().sound = sender.isSelected
         
         sender.layer.borderColor = sender.isSelected ? UIColor.green.cgColor : UIColor.red.cgColor
         

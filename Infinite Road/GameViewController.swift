@@ -17,7 +17,7 @@ enum soundType{
     case jump
 }
 
-class GameViewController : UIViewController{
+class GameViewController : UIViewController, GameOverDelegate{
     
     private var square : SquareImageView! = nil
     
@@ -31,6 +31,8 @@ class GameViewController : UIViewController{
     private let blueBlockImg = UIImage(named: "blueBlock")!
     
     private var bonusBall = UIImageView()
+    
+    private var gameOverView : GameOverView?
     
     //Sounds
     private var clickSound : AVAudioPlayer! = nil
@@ -112,7 +114,7 @@ class GameViewController : UIViewController{
         soundBtn.layer.cornerRadius = soundBtn.frame.height / 2
         soundBtn.imageEdgeInsets = UIEdgeInsets(top: 7, left: 8, bottom: 7, right: 7)
         soundBtn.addTarget(self, action:#selector(setSound(sender:)) , for: .touchUpInside)
-        soundBtn.isSelected = Controller.shared.sound
+        soundBtn.isSelected = Controller.shared().sound
         mainView.addSubview(soundBtn)
         
         self.bonusBall = UIImageView(image: UIImage(named: "bonus")!)
@@ -182,7 +184,7 @@ class GameViewController : UIViewController{
                 }else if combo < 6 {
                     comboColor = UIColor.yellow
                 }else{
-                    comboColor = UIColor.init(colorLiteralRed: 112.0/255.0, green: 251.0/255.0, blue: 253.0/255.0, alpha: 1)
+                    comboColor = Controller.shared().comboBlueColor
                 }
                 
                 self.comboLbl.textColor = comboColor
@@ -207,6 +209,11 @@ class GameViewController : UIViewController{
                 })
                 
             }else{
+                
+                let comboRecord = UserDefaults().integer(forKey: Controller.shared().UDCOMBO)
+                if(self.combo > comboRecord){
+                    UserDefaults().set(self.combo, forKey: Controller.shared().UDCOMBO)
+                }
                 
                 if self.combo >= 3 {
                     self.showBonus()
@@ -256,9 +263,12 @@ class GameViewController : UIViewController{
                 print("Game over")
                 self.isGameOver = true
                 self.play(soundType: .destruction)
-                self.square.destruction {
-                    
-                }
+                self.square.destruction(completion: {
+                    self.gameOverView = GameOverView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width * 0.8, height: self.view.frame.height * 0.55), score:self.blocksNumber)
+                    self.gameOverView?.center = self.view.center
+                    self.gameOverView?.delegate = self
+                    self.view.addSubview(self.gameOverView!)
+                })
             }
         
         })
@@ -274,7 +284,8 @@ class GameViewController : UIViewController{
         }
         
         if self.blocks.count > self.blocksInScreen {
-            self.blocks.remove(at: 0)
+            let block = self.blocks.remove(at: 0)
+            block.removeFromSuperview()
         }
         
         var index = 0
@@ -345,12 +356,12 @@ class GameViewController : UIViewController{
     @objc func setSound(sender: UIButton!){
         sender.isSelected = !sender.isSelected
         print(String(format: "Sound: %@", sender.isSelected ? "OFF" : "ON"))
-        Controller.shared.sound = sender.isSelected
+        Controller.shared().sound = sender.isSelected
     }
     
     func play(soundType: soundType){
         
-        if(Controller.shared.sound!){
+        if(Controller.shared().sound!){
             switch soundType {
             case .click:
                 clickSound.play()
@@ -375,6 +386,38 @@ class GameViewController : UIViewController{
         let distY = arc4random_uniform(B - A) + A
         self.bonusBall.layer.position = CGPoint(x: self.bonusBall.center.x, y: CGFloat(distY))
         self.bonusBall.isHidden = false
+    }
+    
+    func restartGame() {
+
+        //Status reset
+        self.blocksNumber = 0
+        self.combo = 0
+        self.isAnimating = false
+        self.isGameOver = false
+        self.takeBonus = false
+        
+        self.bonusBall.isHidden = true
+        
+        for _ in 0...self.blocks.count - 1 {
+            let block = self.blocks.remove(at: 0)
+            block.removeFromSuperview()
+        }
+        
+        self.margin.frame = self.marginFrame
+        
+        let firstBlock = BlockImageView(with: CGRect(x: self.view.frame.midX - self.greenBlockImg.size.width / 2 - self.greenBlockImg.size.width, y: self.margin.frame.maxY - 11, width: self.greenBlockImg.size.width, height: self.greenBlockImg.size.height), image: greenBlockImg)
+        self.blocks.append(firstBlock)
+        self.view.addSubview(firstBlock)
+        
+        self.square.layer.position = CGPoint(x: firstBlock.center.x, y: firstBlock.frame.minY - greenBlockImg.size.height / 2 + 5)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.square.transform = CGAffineTransform(scaleX: 1, y: 1)
+        })
+        
+        self.gameOverView?.removeFromSuperview()
+        
+        startGame()
     }
     
 }

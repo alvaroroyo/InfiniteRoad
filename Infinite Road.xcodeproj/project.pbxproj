@@ -30,6 +30,7 @@
 		D5C8F8881DF6259600E823D2 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8F8871DF6259600E823D2 /* extensions.swift */; };
 		D5D688CA1DFC55C5008DF62D /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5D688C91DFC55C5008DF62D /* background.jpg */; };
 		D5D688CD1DFC58BD008DF62D /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D688CC1DFC58BD008DF62D /* Controller.swift */; };
+		D5D688D11DFC8E98008DF62D /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D688D01DFC8E98008DF62D /* GameOverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		D5C8F8871DF6259600E823D2 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		D5D688C91DFC55C5008DF62D /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		D5D688CC1DFC58BD008DF62D /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		D5D688D01DFC8E98008DF62D /* GameOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +78,16 @@
 			children = (
 				D51FC6601DFBB1E500677B88 /* BlockImageView.swift */,
 				D51FC6621DFBB44900677B88 /* SquareImageView.swift */,
+				D5D688D01DFC8E98008DF62D /* GameOverView.swift */,
 			);
 			name = GameViews;
+			sourceTree = "<group>";
+		};
+		D5A1E2E11DFDCDF50007B56A /* Pagin Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Pagin Views";
 			sourceTree = "<group>";
 		};
 		D5C8F8491DF623A300E823D2 = {
@@ -167,6 +177,7 @@
 		D5F46A731DF64A4900DB6C91 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D5A1E2E11DFDCDF50007B56A /* Pagin Views */,
 				D51FC65F1DFBB0B500677B88 /* GameViews */,
 				D5C8F8571DF623A300E823D2 /* MainViewController.swift */,
 				D59C7FD01DF7505C00FB906E /* GameViewController.swift */,
@@ -266,6 +277,7 @@
 				D51FC6631DFBB44900677B88 /* SquareImageView.swift in Sources */,
 				D5C8F8881DF6259600E823D2 /* extensions.swift in Sources */,
 				D5C8F8561DF623A300E823D2 /* AppDelegate.swift in Sources */,
+				D5D688D11DFC8E98008DF62D /* GameOverView.swift in Sources */,
 				D5D688CD1DFC58BD008DF62D /* Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
