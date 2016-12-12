@@ -98,6 +98,9 @@ class MainViewController: UIViewController,UIScrollViewDelegate {
         scrollView.delegate = self
         mainView.addSubview(scrollView)
         
+        //Scroll pagins
+        scrollView.addSubview(FirstPageView(frame: CGRect(x: 0, y: 0, width: mainView.frame.width, height: scrollView.frame.height)))
+        
         self.view = mainView
     }
 

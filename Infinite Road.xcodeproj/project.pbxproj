@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		D51FC6611DFBB1E500677B88 /* BlockImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51FC6601DFBB1E500677B88 /* BlockImageView.swift */; };
 		D51FC6631DFBB44900677B88 /* SquareImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51FC6621DFBB44900677B88 /* SquareImageView.swift */; };
 		D59C7FD11DF7505C00FB906E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59C7FD01DF7505C00FB906E /* GameViewController.swift */; };
+		D5A1E2E31DFE10790007B56A /* FirstPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A1E2E21DFE10790007B56A /* FirstPageView.swift */; };
+		D5A1E2ED1DFE22810007B56A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5A1E2EF1DFE22810007B56A /* Localizable.strings */; };
 		D5C8F8561DF623A300E823D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8F8551DF623A300E823D2 /* AppDelegate.swift */; };
 		D5C8F8581DF623A300E823D2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8F8571DF623A300E823D2 /* MainViewController.swift */; };
 		D5C8F85B1DF623A300E823D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C8F8591DF623A300E823D2 /* LaunchScreen.storyboard */; };
@@ -37,6 +39,9 @@
 		D51FC6601DFBB1E500677B88 /* BlockImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockImageView.swift; sourceTree = "<group>"; };
 		D51FC6621DFBB44900677B88 /* SquareImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareImageView.swift; sourceTree = "<group>"; };
 		D59C7FD01DF7505C00FB906E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D5A1E2E21DFE10790007B56A /* FirstPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPageView.swift; sourceTree = "<group>"; };
+		D5A1E2EE1DFE22810007B56A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D5A1E2F01DFE228F0007B56A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D5C8F8521DF623A300E823D2 /* Infinite Road.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Infinite Road.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C8F8551DF623A300E823D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5C8F8571DF623A300E823D2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -86,8 +91,17 @@
 		D5A1E2E11DFDCDF50007B56A /* Pagin Views */ = {
 			isa = PBXGroup;
 			children = (
+				D5A1E2E21DFE10790007B56A /* FirstPageView.swift */,
 			);
 			name = "Pagin Views";
+			sourceTree = "<group>";
+		};
+		D5A1E2EA1DFE225D0007B56A /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				D5A1E2EF1DFE22810007B56A /* Localizable.strings */,
+			);
+			name = Localizable;
 			sourceTree = "<group>";
 		};
 		D5C8F8491DF623A300E823D2 = {
@@ -132,6 +146,7 @@
 		D5C8F8681DF6242400E823D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D5A1E2EA1DFE225D0007B56A /* Localizable */,
 				D5C8F86A1DF6243F00E823D2 /* Sounds */,
 				D5C8F8691DF6243400E823D2 /* Images */,
 			);
@@ -223,12 +238,12 @@
 				};
 			};
 			buildConfigurationList = D5C8F84D1DF623A300E823D2 /* Build configuration list for PBXProject "Infinite Road" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				es,
 			);
 			mainGroup = D5C8F8491DF623A300E823D2;
 			productRefGroup = D5C8F8531DF623A300E823D2 /* Products */;
@@ -247,6 +262,7 @@
 			files = (
 				D5C8F87D1DF6246000E823D2 /* Square.png in Resources */,
 				D5C8F87A1DF6246000E823D2 /* play.png in Resources */,
+				D5A1E2ED1DFE22810007B56A /* Localizable.strings in Resources */,
 				D5C8F87B1DF6246000E823D2 /* soundOFF.png in Resources */,
 				D5C8F8861DF6246E00E823D2 /* jump.m4a in Resources */,
 				D5C8F8761DF6246000E823D2 /* yellowBlock.png in Resources */,
@@ -272,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D51FC6611DFBB1E500677B88 /* BlockImageView.swift in Sources */,
+				D5A1E2E31DFE10790007B56A /* FirstPageView.swift in Sources */,
 				D59C7FD11DF7505C00FB906E /* GameViewController.swift in Sources */,
 				D5C8F8581DF623A300E823D2 /* MainViewController.swift in Sources */,
 				D51FC6631DFBB44900677B88 /* SquareImageView.swift in Sources */,
@@ -285,6 +302,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D5A1E2EF1DFE22810007B56A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5A1E2EE1DFE22810007B56A /* en */,
+				D5A1E2F01DFE228F0007B56A /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		D5C8F8591DF623A300E823D2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -300,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -350,6 +377,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
