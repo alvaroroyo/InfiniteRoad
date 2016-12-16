@@ -260,7 +260,7 @@ class GameViewController : UIViewController, GameOverDelegate{
         }, completion: { finish in
             
             if finish {
-                print("Game over")
+//                print("Game over")
                 self.isGameOver = true
                 self.play(soundType: .destruction)
                 self.square.destruction(completion: {
@@ -355,7 +355,7 @@ class GameViewController : UIViewController, GameOverDelegate{
     
     @objc func setSound(sender: UIButton!){
         sender.isSelected = !sender.isSelected
-        print(String(format: "Sound: %@", sender.isSelected ? "OFF" : "ON"))
+//        print(String(format: "Sound: %@", sender.isSelected ? "OFF" : "ON"))
         Controller.shared().sound = sender.isSelected
     }
     

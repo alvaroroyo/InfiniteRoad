@@ -232,7 +232,6 @@
 				TargetAttributes = {
 					D5C8F8511DF623A300E823D2 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = E4ZU6XA9L6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -421,10 +420,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E4ZU6XA9L6;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Alvaro Royo (FGEQE267D2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = FGEQE267D2;
 				INFOPLIST_FILE = "Infinite Road/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "AR.Infinite-Road";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alvaroroyo.infiniteroad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -435,10 +437,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E4ZU6XA9L6;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Alvaro Royo (FGEQE267D2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = FGEQE267D2;
 				INFOPLIST_FILE = "Infinite Road/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "AR.Infinite-Road";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alvaroroyo.infiniteroad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

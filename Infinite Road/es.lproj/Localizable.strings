@@ -6,3 +6,14 @@
   Copyright © 2016 Alvaro Royo. All rights reserved.
 */
 "How to play:" = "Como jugar:";
+
+"\n\nStop the blocks before they reach the margin.\nThe margin is adjusted to the height of the last block.\nIf the block touch the margin, game over.\nThe speed increments with the blocks number.\n\n"="\n\nDetén los bloques antes de que lleguen al margen.\nEl margen se ajusta a la altura del ultimo bloque.\nSi el bloque toca el margen, estás perdido.\nLa velocidad de subida de los bloques se incrementa con el número de bloques.\n\n";
+
+"Play"="Jugar";
+"Sound ON"="Sonido ON";
+"Sound OFF"="Sonido OFF";
+"Game Over"="Game Over";
+"Record"="Record";
+"Score"="Puntos";
+"Combo record"="Record combos";
+"Restart"="Empezar";

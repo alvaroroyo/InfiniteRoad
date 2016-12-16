@@ -54,7 +54,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate {
         //Boton de play
         let playBtn = UIButton.init(frame: CGRect(x: 0, y: mainView.frame.maxY - 130, width: 100, height: 50))
         playBtn.setBackgroundImage(UIImage.imageWithColor(color: UIColor.colorWithHex(hex: "#00ff00", alpha: 0.2)), for: UIControlState.normal)
-        playBtn.setTitle("Play", for: .normal)
+        playBtn.setTitle(NSLocalizedString("Play", comment: ""), for: .normal)
         playBtn.setTitleColor(UIColor.green, for: .normal)
         playBtn.clipsToBounds = true
         playBtn.layer.cornerRadius = 7
@@ -68,8 +68,8 @@ class MainViewController: UIViewController,UIScrollViewDelegate {
         let soundBtn = UIButton.init(frame: CGRect(x: 0, y: playBtn.frame.maxY + 10, width: 80, height: 35))
         soundBtn.setBackgroundImage(UIImage.imageWithColor(color: UIColor.colorWithHex(hex: "#00ff00", alpha: 0.2)), for: UIControlState.selected)
         soundBtn.setBackgroundImage(UIImage.imageWithColor(color: UIColor.colorWithHex(hex: "#ff0000", alpha: 0.2)), for: UIControlState.normal)
-        soundBtn.setTitle("Sound ON", for: .selected)
-        soundBtn.setTitle("Sound OFF", for: .normal)
+        soundBtn.setTitle(NSLocalizedString("Sound ON", comment: ""), for: .selected)
+        soundBtn.setTitle(NSLocalizedString("Sound OFF", comment: ""), for: .normal)
         soundBtn.setTitleColor(UIColor.green, for: .selected)
         soundBtn.setTitleColor(UIColor.red, for: .normal)
         soundBtn.clipsToBounds = true

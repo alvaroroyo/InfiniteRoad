@@ -35,28 +35,28 @@ class GameOverView : UIView {
         self.addSubview(mainView)
         
         let gameOverLbl = UILabel(frame: CGRect(x: 0, y: 20, width: self.frame.width, height: 50))
-        gameOverLbl.text = "Game Over"
+        gameOverLbl.text = NSLocalizedString("Game Over", comment: "")
         gameOverLbl.textColor = UIColor.orange
         gameOverLbl.font = UIFont(name: "Verdana-bold", size: 40)
         gameOverLbl.textAlignment = .center
         mainView.addSubview(gameOverLbl)
         
         let scoreLbl = UILabel(frame: CGRect(x: 20, y: mainView.frame.midY - 65, width: self.frame.width, height: 40))
-        scoreLbl.text = String(format:"Score: %li",score)
+        scoreLbl.text = String(format:"%@: %li",NSLocalizedString("Score", comment: ""),score)
         scoreLbl.textColor = UIColor.white
         scoreLbl.font = UIFont(name: "Verdana-bold", size: 30)
         scoreLbl.textAlignment = .left
         mainView.addSubview(scoreLbl)
         
         let record = UILabel(frame: CGRect(x: 20, y: mainView.frame.midY - 20, width: self.frame.width, height: 40))
-        record.text = String(format: "Record: %li",recordInt)
+        record.text = String(format: "%@: %li",NSLocalizedString("Record", comment: ""),recordInt)
         record.textColor = UIColor.yellow
         record.font = UIFont(name: "Verdana-bold", size: 30)
         record.textAlignment = .left
         mainView.addSubview(record)
         
         let comboRecord = UILabel(frame: CGRect(x: 20, y: mainView.frame.midY + 40, width: self.frame.width, height: 23))
-        comboRecord.text = String(format: "Combo record: %li",UserDefaults().integer(forKey: Controller.shared().UDCOMBO))
+        comboRecord.text = String(format: "%@: %li",NSLocalizedString("Combo record", comment: ""),UserDefaults().integer(forKey: Controller.shared().UDCOMBO))
         comboRecord.textColor = Controller.shared().comboBlueColor
         comboRecord.font = UIFont(name: "Verdana-bold", size: 20)
         comboRecord.textAlignment = .left
@@ -64,7 +64,7 @@ class GameOverView : UIView {
         
         let playBtn = UIButton.init(frame: CGRect(x: 0, y: self.frame.maxY - 70, width: 130, height: 50))
         playBtn.setBackgroundImage(UIImage.imageWithColor(color: UIColor.colorWithHex(hex: "#00ff00", alpha: 0.2)), for: UIControlState.normal)
-        playBtn.setTitle("Restart", for: .normal)
+        playBtn.setTitle(NSLocalizedString("Restart", comment: ""), for: .normal)
         playBtn.setTitleColor(UIColor.green, for: .normal)
         playBtn.clipsToBounds = true
         playBtn.layer.cornerRadius = 7
